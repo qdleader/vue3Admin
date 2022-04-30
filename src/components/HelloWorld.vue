@@ -1,36 +1,42 @@
-<script setup lang="ts">
-import { ref } from 'vue'
+<script lang="ts">
+import { defineComponent } from "vue";
 
-defineProps<{ msg: string }>()
-
-const count = ref(0)
+export default defineComponent({
+  name: "HelloWorld",
+  setup() {
+    // ↓读取内建环境变量
+    const mode = import.meta.env.MODE;
+    // ↓读取自定义环境变量
+    const host = import.meta.env.VITE_HOST;
+    const port = import.meta.env.VITE_PORT;
+    const baseUrl = import.meta.env.VITE_BASE_URL;
+    const baseDomain = import.meta.env.VITE_API_DOMAIN ;
+    // ↓返回变量，使支持template获取
+    return {
+      mode,
+      host,
+      port,
+      baseUrl,
+      baseDomain
+    };
+  },
+});
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
 
-  <p>
-    Recommended IDE setup:
-    <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
-    +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-  </p>
+    <el-button type="primary">Primary</el-button>
+    <el-button type="success">Success</el-button>
 
-  <p>See <code>README.md</code> for more information.</p>
+      <div>
+    <h2>环境变量</h2>
+    mode: {{ mode }} <br />
+    host: {{ host }} <br />
+    port: {{ port }} <br />
+    baseUrl: {{ baseUrl }}
+    baseDomain: {{ baseDomain }}
+  </div>
 
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Docs
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
-  </p>
-
-  <button type="button" @click="count++">count is: {{ count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
 </template>
 
 <style scoped>
