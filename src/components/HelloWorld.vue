@@ -29,17 +29,18 @@ export default defineComponent({
     <el-button type="success">Success</el-button>
 
       <div>
-    <h2>环境变量</h2>
-    mode: {{ mode }} <br />
-    host: {{ host }} <br />
-    port: {{ port }} <br />
-    baseUrl: {{ baseUrl }}
-    baseDomain: {{ baseDomain }}
-  </div>
+        <h2 class="red">环境变量</h2>
+        mode: {{ mode }} <br />
+        host: {{ host }} <br />
+        port: {{ port }} <br />
+        baseUrl: {{ baseUrl }}
+        baseDomain: {{ baseDomain }}
+      </div>
 
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import '@/assets/style/index.scss';
 a {
   color: #42b983;
 }
