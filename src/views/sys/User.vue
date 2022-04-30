@@ -1,12 +1,12 @@
 <template>
-  <!-- ↓总路由视图 -->
-  <router-view></router-view>
+  <h2>User Page</h2>
+  <router-link to="/">Go to Home</router-link>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "App",
+  name: "User",
 });
 </script>
