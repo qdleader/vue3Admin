@@ -20,12 +20,22 @@ const routes = [
         name: 'home',
         component: () => import('@/views/Home.vue')
       },
-      // ↓用户管理
-      {
-        path: '/sys/user',
-        name: 'sys-user',
-        component: () => import('@/views/sys/User.vue')
-      },
+      // // ↓用户管理
+      // {
+      //   path: '/sys/user',
+      //   name: 'sys-user',
+      //   component: () => import('@/views/sys/User.vue')
+      // },
+      // {
+      //   path: '/sys/dict',
+      //   name: 'sys-dict',
+      //   component: () => import('@/views/sys/User.vue')
+      // },
+      // {
+      //   path: '/sys/dict1',
+      //   name: 'sys-dict1',
+      //   component: () => import('@/views/sys/User.vue')
+      // },
     ]
   },
   // ↓登录页

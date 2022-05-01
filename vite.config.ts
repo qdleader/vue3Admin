@@ -42,26 +42,27 @@ export default ({ command, mode }) => {
 			// 是否开启 https
 			https: false,
 			// 服务端渲染
-      ssr: false,
-      strictPort:false, //设为 true 时若端口已被占用则会直接退出，而不是尝试下一个可用端口。
+			ssr: false,
+			strictPort:false, //设为 true 时若端口已被占用则会直接退出，而不是尝试下一个可用端口。
 			base: process.env.VITE_BASE_URL,
-      outDir: process.env.VITE_OUTPUT_DIR,//默认： dist  指定输出路径（相对于项目根目录)。
-      brotliSize:false, //默认： true 启用/禁用 brotli 压缩大小报告。压缩大型输出文件可能会很慢，因此禁用该功能可能会提高大型项目的构建性能。
-      proxy: {
-        // 字符串简写写法
-        '/foo': 'http://localhost:4567/foo',
-        // 选项写法
-        '/api': {
-          target: 'http://jsonplaceholder.typicode.com',
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, '')
-        },
-        // 正则表达式写法
-        '^/fallback/.*': {
-          target: 'http://jsonplaceholder.typicode.com',
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/fallback/, '')
-        },
+			outDir: process.env.VITE_OUTPUT_DIR,//默认： dist  指定输出路径（相对于项目根目录)。
+			brotliSize:false, //默认： true 启用/禁用 brotli 压缩大小报告。压缩大型输出文件可能会很慢，因此禁用该功能可能会提高大型项目的构建性能。
+			proxy: {
+				// 字符串简写写法
+				'/foo': 'http://localhost:4567/foo',
+				'/users': 'http://localhost:3000/users',
+				// 选项写法
+				'/api':{
+				target:'http://localhost:3000/',
+				changeOrigin:true,
+				rewrite:(path) => path.replace(/^\/api/,'')
+				},
+				// 正则表达式写法
+				'^/fallback/.*': {
+				target: 'http://jsonplaceholder.typicode.com',
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/fallback/, '')
+				},
 			}
 		},
 	})

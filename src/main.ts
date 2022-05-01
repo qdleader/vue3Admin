@@ -1,15 +1,16 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import ElementPlus from 'element-plus'
+// import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
-import axios from 'axios'
-axios.defaults.baseURL = import.meta.env.VITE_APP_URL
+import { useElementComponents } from '@/config/element'
 
 import router from '@/router/index'
 
+
+
 createApp(App)
-    .use(ElementPlus)
+    .use(useElementComponents)
     .use(router)
     .mount('#app')
