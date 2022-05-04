@@ -91,25 +91,54 @@ router.post('/userInfo', function (req, res, next) {
         menus: [
           {
             id: 1,
-            name: '权限管理',
+            name: 'homePage',
+            path:'/home',
             icon: 'Fold',
+            meta: {
+              title: '权限管理',
+              isShow: true
+            },
             children: [
-              { id: 2, name: '用户管理', routeName: 'sys-user', path: '/sys/user', component: '/sys/User.vue' },
-              { id: 3, name: '角色管理', routeName: 'sys-role', path: '/sys/role', component: '/sys/Role.vue' },
-              { id: 4, name: '菜单管理', path: '/sys/menu' },
+              {
+                id: 2, name: 'sys-user',
+                icon: 'Fold',
+                meta: {
+                  title: '用户管理',
+                  isShow: true
+                },  routeName: '/sys/user', path: '/sys/user', component: '/sys/User.vue'
+              },
+              {
+                id: 3,
+                icon: 'Fold',
+                meta: {
+                  title: '角色管理',
+                  isShow: true
+                }, name: 'sys-role', routeName: '/sys/role', path: '/sys/role', component: '/sys/Role.vue' },
+              {
+                id: 4,
+                icon: 'Fold',
+                meta: {
+                  title: '系统管理',
+                  isShow: true
+                }, name: 'sys-menu', routeName: '/sys/menu', path: '/sys/menu' },
             ],
           },
-          {
-            id: 5,
-            name: '系统管理',
-            icon: 'add-location',
-            children: [
-              { id: 6, name: '系统字典', path: '/sys/dict' },
-              { id: 7, name: '参数配置', path: '/sys/config' },
-              { id: 8, name: '通知公告', path: '/sys/notice' },
-              { id: 9, name: '日志审计', path: '/sys/log' },
-            ],
-          },
+          // {
+          //   id: 5,
+          //   path: '/sys/user',
+          //   name: 'sys-user',
+          //   meta: {
+          //     title: '人员管理',
+          //     isShow: true
+          //   },
+          //   icon: 'add-location',
+          //   children: [
+          //     { id: 6, name: '系统字典', path: '/sys/dict' },
+          //     { id: 7, name: '参数配置', path: '/sys/config' },
+          //     { id: 8, name: '通知公告', path: '/sys/notice' },
+          //     { id: 9, name: '日志审计', path: '/sys/log' },
+          //   ],
+          // },
         ],
       },
       'zhangsanInfo':
