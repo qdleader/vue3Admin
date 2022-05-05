@@ -88,16 +88,6 @@ const routes = [
         component: () => import('@/views/Home.vue')
       },
       {
-        path: '/sys/user',
-        name: 'sys-user',
-        icon: "Fold",
-        meta: {
-          title: '用户管理',
-          isShow:true
-        },
-        component:() => import('@/views/sys/User.vue')
-      },
-      {
         path: '/:catchAll(.*)',
         name: '404',
         icon: "Fold",

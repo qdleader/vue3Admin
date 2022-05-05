@@ -1,16 +1,17 @@
 <template>
   <div>
-    <h2>路由</h2>
-    <!-- ↓匹配路由path进行跳转 -->
+      <router-view></router-view>
+    <!-- <h2>路由</h2>
+  
     <router-link to="/sys/user">Go to User</router-link> <br />
-    <!-- ↓匹配路由name进行跳转 -->
-    <router-link :to="{ name: 'login' }">Go to Login</router-link>
+
+    <router-link :to="{ name: 'login' }">Go to Login</router-link> -->
 
 
-    <button @click="userPage">mock分页查询</button>
+    <!-- <button @click="userPage">mock分页查询</button>
     <button @click="addUser">mock新增</button>
     <button @click="modifyUser">mock修改</button>
-    <button @click="delUser">mock删除</button>
+    <button @click="delUser">mock删除</button>  -->
 
   </div>
 </template>

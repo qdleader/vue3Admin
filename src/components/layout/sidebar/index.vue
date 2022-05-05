@@ -83,7 +83,7 @@ export default defineComponent({
        console.log("menus 保存了吗看看",menus,menus[0],menusStr);
     onMounted(async () => {
       
-      let res = await userInfoStore.setAll()
+      // let res = await userInfoStore.setAll()
 
             const list = router.getRoutes().filter(v => v.meta.isShow)
       console.log(111,list);
